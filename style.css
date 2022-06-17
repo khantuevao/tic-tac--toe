@@ -7,20 +7,6 @@
   gap: 1rem;
 }
 
-.name, .score {
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.one, .two {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.6rem;
-}
-
 .name.one {
   grid-column: 1 / 4;
   grid-row: 1 / 2;
@@ -39,6 +25,13 @@
   grid-row: 2 / 3;
 }
 
+.name, .score {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .area {
   grid-column: span 2;
   border: 2px solid grey;
@@ -47,6 +40,7 @@
   justify-content: center;
   align-items: center;
   transition-duration: 0.2s;
+  font-size: 2rem;
 }
 .area:hover {
   transform: scale(1.05);
