@@ -1,0 +1,55 @@
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(6, 5rem);
+  grid-template-rows: repeat(2, 2rem) repeat(3, 10rem);
+  justify-content: center;
+  margin-top: 10rem;
+  gap: 1rem;
+}
+
+.name, .score {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one, .two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.name.one {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+.score.one {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+}
+
+.name.two {
+  grid-column: 4 / 7;
+  grid-row: 1 / 2;
+}
+.score.two {
+  grid-column: 4 / 7;
+  grid-row: 2 / 3;
+}
+
+.area {
+  grid-column: span 2;
+  border: 2px solid grey;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s;
+}
+.area:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 4px;
+  transition-duration: 0.2s;
+}
