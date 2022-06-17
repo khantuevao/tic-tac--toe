@@ -42,7 +42,18 @@ let player2
 
 let checkTurn
 
-const checkResult = (() => {
+const checkIsOver = () => {
+  const result = (() => {
+    let count = 0;
+    for (let i = 0; i < 9; i++) {
+      if (gameBoard.board[i] === undefined) count++;
+    }
+    return (count === 0)? true : false;
+  })();
+  return result;
+}
+
+const checkResult = () => {
   const area = gameBoard.board;
   const result = (() => {
     return ((area[0] === area[1] && area[0] === area[2]) || 
@@ -53,7 +64,7 @@ const checkResult = (() => {
             (area[8] === area[5] && area[8] === area[2]))? 'win' : 'draw';
   })();
   return {result};
-})();
+};
 
 const renderBoard = (() => {
   const squares = document.getElementsByClassName('area');
