@@ -60,4 +60,11 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  gap: 1rem;
+}
+
+button {
+  height: 2rem;
+  width: 8rem;
+  font-size: 1.1rem;
 }

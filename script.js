@@ -10,10 +10,16 @@ const newPlayer = () => {
   return name;
 }
 
-
-
-
 const gameFlow = (() => {
+
+  let firstPlayer = 'playerOne';
+  let secondPlayer = 'playerTwo';
+  let scoreOne = document.getElementById('score-one');
+  let scoreTwo = document.getElementById('score-two');
+  const resultContainer = document.getElementById('result-container');
+  const restart = document.querySelector('.restart');
+  const clearBtn = document.querySelector('.clear');
+
   const clear = () => {
     resultContainer.textContent = '';
     gameBoard.board = [];
@@ -23,8 +29,16 @@ const gameFlow = (() => {
     };      
   }
 
-  let firstPlayer = 'playerOne';
-  let secondPlayer = 'playerTwo';
+  clearBtn.addEventListener('click', () => {
+    clear();
+  })
+
+  restart.addEventListener('click', () => {
+    clear();
+    scoreOne.textContent = '0';
+    scoreTwo.textContent = '0';
+  });
+
   const newPlayers = document.querySelector('.new-players');
   newPlayers.addEventListener('click', () => {
     firstPlayer = newPlayer(one);
@@ -32,17 +46,13 @@ const gameFlow = (() => {
     const updateNames = (() => {
       const nameOne = document.getElementById('name-one');
       nameOne.textContent = `${firstPlayer} (red)`;
-      let scoreOne = document.getElementById('score-one');
       scoreOne.textContent = '0';
       const nameTwo = document.getElementById('name-two');
       nameTwo.textContent = `${secondPlayer} (green)`;
-      let scoreTwo = document.getElementById('score-two');
       scoreTwo.textContent = '0';
       clear();
     })();
   });
-
-  const resultContainer = document.getElementById('result-container');
 
   const checkResult = () => {
     const checkIsOver = () => {
