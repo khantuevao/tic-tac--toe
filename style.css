@@ -1,5 +1,4 @@
 #result-container {
-  border: 1px solid black;
   height: 10rem;
   display: flex;
   justify-content: center;
@@ -55,4 +54,10 @@
   transform: scale(1.05);
   box-shadow: 1px 1px 4px;
   transition-duration: 0.2s;
+}
+
+.buttons-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
